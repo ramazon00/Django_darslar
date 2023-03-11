@@ -1,0 +1,15 @@
+{% if request.user.is_authenticated %}
+    <ul class="menu">
+        <li>
+            <a href="{% url 'login:dashboard' %}">Mening dashboardim</a>
+        </li>
+        <li>
+            <a href="{% url 'login:logout' %}">Akkauntdan chiqish</a>
+        </li>
+    </ul>
+{% endif %}
+
+<p>Dashboardga xush kelibsiz!</p>
+<h1>Salom {{ user.username }}!</h1>
+
+

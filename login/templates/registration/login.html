@@ -1,0 +1,14 @@
+
+{% if form.errors %}
+    <p>Sizning nomingiz topilmadi!</p>
+{% else %}
+    <p>Iltimos kiring!</p>
+{% endif %}
+
+<div class="login-form">
+    <form action="{% url 'login:login' %}" method="post">
+        {{ form.as_p}}{% csrf_token %}
+        <input type="hidden" name="text" value="{{ next }}"/>
+        <p><input type="submit" value="Kirish"></p>
+    </form>
+</div>
