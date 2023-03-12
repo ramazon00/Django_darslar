@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section id="demos">
+    <div class="container-fluid px-md-5">
+        <!-- Title -->
+        <div class="row mb-4 position-relative">
+            <div class="col-xl-6 mx-auto text-center">
+                <h2>Carefully crafted demo sites.</h2>
+                <p>Created with detailed research on a particular domain niche to fulfill all the required features,
+                    designs, and pages. You can also mix and match sections to create a website related to listing and
+                    directory domains.</p>
+            </div>
+        </div>
+
+        <!-- Pages START -->
+        <div class="row g-4 g-xl-7 demo-grid">
+            <div class="col-sm-6 col-lg-4 col-xxl-3 demo-grid-item">
+                <div class="card card-hover-shadow border">
+                    <!-- Image -->
+                    <img src="" class="card-img-top" alt="">
+                    <!-- card body -->
+                    <div class="card-body border-top">
+                        <h6 class="mb-0">{{product.title}}</h6>
+                        <small>{{product.description}}</small>
+                        <small>{{product.price}}$</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

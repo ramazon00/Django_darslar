@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section id="demos">
+    <div class="container-fluid px-md-5">
+        <!-- Title -->
+        <div class="row mb-4 position-relative">
+            <div class="col-xl-6 mx-auto text-center">
+                <h2>Enjoy buying.</h2>
+            </div>
+        </div>
+
+        <!-- Pages START -->
+        <div class="row g-4 g-xl-7 demo-grid">
+            {% for product in products %}
+            <div class="col-sm-6 col-lg-4 col-xxl-3 demo-grid-item">
+                <div class="card card-hover-shadow border">
+                    <!-- Image -->
+                    <img src="assets/images/demos/01.jpg" class="card-img-top" alt="">
+                    <!-- card body -->
+                    <div class="card-body border-top">
+                        <h6 class="mb-0"><a href="{% url 'single' product.category.slug product.slug %}" class="stretched-link">{{product.title}}</a><small class="ms-2"> {{product.price}}$</small></h6>
+                        <small>{{product.description}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
